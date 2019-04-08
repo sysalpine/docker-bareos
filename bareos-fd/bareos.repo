@@ -1,0 +1,7 @@
+[home_p7k_bareos_18.2]
+name=Bareos 18.2 (Fedora_29)
+type=rpm-md
+baseurl=https://download.opensuse.org/repositories/home:/p7k:/bareos:/18.2/Fedora_29/
+gpgcheck=1
+gpgkey=https://download.opensuse.org/repositories/home:/p7k:/bareos:/18.2/Fedora_29/repodata/repomd.xml.key
+enabled=1

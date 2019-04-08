@@ -1,0 +1,6 @@
+FROM registry.gitlab.com/p7k/docker-bareos/bareos-fd:18.2.6.0
+
+LABEL maintainer="SysAlpine <mail@sysalpine.com>"
+
+RUN microdnf install --nodocs mariadb; \
+    microdnf clean all
