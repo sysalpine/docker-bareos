@@ -5,6 +5,7 @@ LABEL maintainer="SysAlpine <mail@sysalpine.com>"
 ENV BAREOS_VERSION=18.2.6 \
     BAREOS_FD_PASSWORD=changeme \
     BAREOS_FD_NAME=localhost \
+    BAREOS_FD_ADDRESS=0.0.0.0 \
     BAREOS_FD_PORT=9102 \
     BAREOS_DIR_ADDRESS=localhost \
     CONNECTION_FROM_CLIENT_TO_DIRECTOR=no \
@@ -25,4 +26,3 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 9102
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD ["bareos-fd", "-f", "-c", "/etc/bareos/bareos-fd.conf"]
