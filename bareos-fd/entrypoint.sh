@@ -11,4 +11,8 @@ sed -i 's@BAREOS_DIR_NAME@'"$BAREOS_DIR_NAME"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@CONNECTION_FROM_CLIENT_TO_DIRECTOR@'"$CONNECTION_FROM_CLIENT_TO_DIRECTOR"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@CONNECTION_FROM_DIRECTOR_TO_CLIENT@'"$CONNECTION_FROM_DIRECTOR_TO_CLIENT"'@' /etc/bareos/bareos-fd.conf
 
+if [ ! -d /data ]; then
+  mkdir /data
+fi
+
 bareos-fd -f -c /etc/bareos/bareos-fd.conf
