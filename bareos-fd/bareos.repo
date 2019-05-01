@@ -1,7 +1,10 @@
-[home_p7k_bareos_18.2]
-name=Bareos 18.2 (Fedora_29)
+[p7k-bareos-18.2]
+name=Copr repo for bareos-18.2 owned by p7k
+baseurl=https://copr-be.cloud.fedoraproject.org/results/p7k/bareos-18.2/fedora-$releasever-$basearch/
 type=rpm-md
-baseurl=https://download.opensuse.org/repositories/home:/p7k:/bareos:/18.2/Fedora_29/
+skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://download.opensuse.org/repositories/home:/p7k:/bareos:/18.2/Fedora_29/repodata/repomd.xml.key
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/p7k/bareos-18.2/pubkey.gpg
+repo_gpgcheck=0
 enabled=1
+enabled_metadata=1
