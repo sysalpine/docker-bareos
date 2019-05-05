@@ -12,15 +12,14 @@ ENV BAREOS_VERSION=18.2.6 \
     CONNECTION_FROM_CLIENT_TO_DIRECTOR=no \
     CONNECTION_FROM_DIRECTOR_TO_CLIENT=yes
 
-# Add p7k bareos repo for Fedora 29
-COPY bareos.repo /etc/yum.repos.d/bareos.repo
+COPY config/yum.repo /etc/yum.repos.d/bareos.repo
 
 # Install Bareos Filedaemon (Client)
 RUN microdnf install --nodocs bareos-client-${BAREOS_VERSION}; \
     microdnf clean all
 
 # Install bareos configuration
-COPY bareos-fd.conf /etc/bareos/bareos-fd.conf
+COPY config/bareos-fd.conf /etc/bareos/bareos-fd.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
