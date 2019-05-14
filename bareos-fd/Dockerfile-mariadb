@@ -15,9 +15,11 @@ ENV BAREOS_VERSION=18.2.6 \
 # Add p7k bareos repo for Fedora 29
 COPY config/yum.repo /etc/yum.repos.d/bareos.repo
 
+# Install Requirements
+RUN microdnf --nodocs install hostname mariadb; microdnf clean all 
+
 # Install Bareos Filedaemon (Client)
-RUN microdnf install --nodocs bareos-client-${BAREOS_VERSION} mariadb; \
-    microdnf clean all
+RUN microdnf install --nodocs bareos-client-${BAREOS_VERSION}; microdnf clean all
 
 # Install bareos configuration
 COPY config/bareos-fd.conf /etc/bareos/bareos-fd.conf
