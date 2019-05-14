@@ -14,9 +14,14 @@ ENV BAREOS_VERSION=18.2.6 \
 
 COPY config/yum.repo /etc/yum.repos.d/bareos.repo
 
+# Install Requirements
+RUN microdnf install hostname
+
 # Install Bareos Filedaemon (Client)
-RUN microdnf install --nodocs bareos-client-${BAREOS_VERSION}; \
-    microdnf clean all
+RUN microdnf install --nodocs bareos-client-${BAREOS_VERSION}
+
+# Clean up
+RUN microdnf clean all; rm -rf /var/lib/cache/*
 
 # Install bareos configuration
 COPY config/bareos-fd.conf /etc/bareos/bareos-fd.conf
