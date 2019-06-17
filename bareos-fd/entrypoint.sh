@@ -8,6 +8,11 @@ sed -i 's@BAREOS_FD_EXTRA_CONFIG@'"$BAREOS_FD_EXTRA_CONFIG"'@' /etc/bareos/bareo
 sed -i 's@BAREOS_DIR_ADDRESS@'"$BAREOS_DIR_ADDRESS"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@BAREOS_DIR_EXTRA_CONFIG@'"$BAREOS_DIR_EXTRA_CONFIG"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@BAREOS_DIR_NAME@'"$BAREOS_DIR_NAME"'@' /etc/bareos/bareos-fd.conf
+sed -i 's@BAREOS_FD_PKI_SIGNATURES@'"$BAREOS_FD_PKI_SIGNATURES"'@' /etc/bareos/bareos-fd.conf
+sed -i 's@BAREOS_FD_PKI_ENCRYPTION@'"$BAREOS_FD_PKI_ENCRYPTION"'@' /etc/bareos/bareos-fd.conf
+sed -i 's@BAREOS_FD_PKI_KEYPAIR@'"$BAREOS_FD_PKI_KEYPAIR"'@' /etc/bareos/bareos-fd.conf
+sed -i 's@BAREOS_FD_PKI_MASTER_KEY@'"$BAREOS_FD_PKI_MASTER_KEY"'@' /etc/bareos/bareos-fd.conf
+sed -i 's@BAREOS_FD_PKI_CIPHER@'"$BAREOS_FD_PKI_CIPHER"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@CONNECTION_FROM_CLIENT_TO_DIRECTOR@'"$CONNECTION_FROM_CLIENT_TO_DIRECTOR"'@' /etc/bareos/bareos-fd.conf
 sed -i 's@CONNECTION_FROM_DIRECTOR_TO_CLIENT@'"$CONNECTION_FROM_DIRECTOR_TO_CLIENT"'@' /etc/bareos/bareos-fd.conf
 
